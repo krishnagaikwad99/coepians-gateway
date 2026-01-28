@@ -66,7 +66,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-6">Our Courses</h4>
             <ul className="space-y-3">
-              {["JEE Main & Advanced", "NEET-UG", "Foundation Course", "Crash Course", "Olympiad Training", "Doubt Clearing"].map((course) => (
+              {["Class 9th & 10th", "Class 11th & 12th", "JEE Main & Advanced", "NEET-UG", "MHT-CET", "Crash Course"].map((course) => (
                 <li key={course}>
                   <a
                     href="#courses"

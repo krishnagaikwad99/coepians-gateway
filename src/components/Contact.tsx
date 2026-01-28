@@ -96,13 +96,16 @@ const Contact = () => {
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Course Interested In
                 </label>
-                <select className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all">
+              <select className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all">
                   <option value="">Select a course</option>
+                  <option value="9th">Class 9th</option>
+                  <option value="10th">Class 10th</option>
+                  <option value="11th">Class 11th</option>
+                  <option value="12th">Class 12th</option>
                   <option value="jee">JEE Main & Advanced</option>
                   <option value="neet">NEET-UG</option>
-                  <option value="foundation">Foundation Course</option>
+                  <option value="mhtcet">MHT-CET</option>
                   <option value="crash">Crash Course</option>
-                  <option value="olympiad">Olympiad Training</option>
                 </select>
               </div>
 
