@@ -75,16 +75,20 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-6">Contact Info</h4>
             <ul className="space-y-3 text-primary-foreground/70">
-              <li>123 Education Lane</li>
-              <li>Knowledge City, State 123456</li>
+              <li>In front of Bus Stand,</li>
+              <li>Above Agarwal Sweets, Lonand</li>
+              <li>Taluka Khandala, Dist. Satara</li>
               <li className="pt-2">
-                <span className="text-gold">Phone:</span> +91 98765 43210
+                <span className="text-gold">Phone:</span> +91 98819 03805
               </li>
               <li>
-                <span className="text-gold">Email:</span> info@coepiansacademy.com
+                <span className="text-gold">Alt:</span> +91 88061 85646
+              </li>
+              <li>
+                <span className="text-gold">Email:</span> coepiansacademy111@gmail.com
               </li>
               <li className="pt-2">
-                <span className="text-gold">Hours:</span> Mon - Sat: 8AM - 8PM
+                <span className="text-gold">Hours:</span> Mon - Sat: 9AM - 4:30PM
               </li>
             </ul>
           </div>
