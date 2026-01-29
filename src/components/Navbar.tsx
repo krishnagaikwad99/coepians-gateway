@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Menu, X, GraduationCap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,18 +20,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2 group">
-            <div className="p-2 rounded-lg bg-primary text-primary-foreground">
-              <GraduationCap className="w-6 h-6" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-lg text-foreground leading-tight">
-                Coepians Academy
-              </span>
-              <span className="text-xs text-muted-foreground font-cursive">
-                The gateway of dreams
-              </span>
-            </div>
+          <a href="#home" className="flex items-center group">
+            <img 
+              src={logo} 
+              alt="Coepian's Academy - Strength, Truth, Endurance" 
+              className="h-12 md:h-16 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Navigation */}

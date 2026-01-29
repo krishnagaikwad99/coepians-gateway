@@ -1,4 +1,5 @@
-import { GraduationCap, Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowUp } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowUp } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -12,21 +13,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="p-2 rounded-lg bg-primary text-primary-foreground">
-                <GraduationCap className="w-6 h-6" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg leading-tight">
-                  Coepians Academy
-                </span>
-                <span
-                  className="text-sm font-cursive text-gold"
-                  style={{ transform: "rotate(-2deg)", display: "inline-block" }}
-                >
-                  The gateway of dreams
-                </span>
-              </div>
+            <div className="mb-6">
+              <img 
+                src={logo} 
+                alt="Coepian's Academy - Strength, Truth, Endurance" 
+                className="h-20 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-primary-foreground/70 mb-6 text-sm leading-relaxed">
               Empowering students with knowledge, skills, and values since 2009. Join us to transform your dreams into reality.
