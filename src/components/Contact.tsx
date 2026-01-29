@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {
@@ -26,7 +26,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Call Us</p>
-                  <p className="font-semibold text-foreground">+91 98765 43210</p>
+                  <p className="font-semibold text-foreground">+91 98819 03805</p>
+                  <p className="text-sm text-muted-foreground">+91 88061 85646</p>
                 </div>
               </div>
 
@@ -36,7 +37,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email Us</p>
-                  <p className="font-semibold text-foreground">info@coepiansacademy.com</p>
+                  <p className="font-semibold text-foreground">coepiansacademy111@gmail.com</p>
                 </div>
               </div>
 
@@ -46,7 +47,18 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Visit Us</p>
-                  <p className="font-semibold text-foreground">123 Education Lane, Knowledge City</p>
+                  <p className="font-semibold text-foreground">In front of Bus Stand, Above Agarwal Sweets</p>
+                  <p className="text-sm text-muted-foreground">Lonand, Taluka Khandala, District Satara, Maharashtra</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Operating Hours</p>
+                  <p className="font-semibold text-foreground">9:00 AM - 4:30 PM</p>
                 </div>
               </div>
             </div>
