@@ -1,17 +1,9 @@
-import drAmbedkar from "@/assets/inspiration/dr-ambedkar.jpg";
 import mahatmaPhule from "@/assets/inspiration/mahatma-phule.jpg";
 import savitribaiPhule from "@/assets/inspiration/savitribai-phule.jpg";
-import shahuMaharaj from "@/assets/inspiration/shahu-maharaj.jpg";
+import drAmbedkar from "@/assets/inspiration/dr-ambedkar.jpg";
 
 const Inspiration = () => {
   const inspirations = [
-    {
-      name: "Dr. Babasaheb Ambedkar",
-      nameMarathi: "डॉ. बाबासाहेब आंबेडकर",
-      image: drAmbedkar,
-      quoteEnglish: "Without education, the oppressed cannot rise, society cannot become equal, and true democracy cannot survive.",
-      quoteMarathi: "शिक्षणाशिवाय दबलेले घटक उन्नती करू शकत नाहीत, समाज समतावादी होऊ शकत नाही आणि खरी लोकशाही टिकू शकत नाही.",
-    },
     {
       name: "Mahatma Jyotirao Phule",
       nameMarathi: "महात्मा ज्योतिराव फुले",
@@ -27,11 +19,11 @@ const Inspiration = () => {
       quoteMarathi: "शिक्षण हेच स्त्रीचे खरे बळ आणि भूषण आहे.",
     },
     {
-      name: "Chhatrapati Shahu Maharaj",
-      nameMarathi: "छत्रपती शाहू महाराज",
-      image: shahuMaharaj,
-      quoteEnglish: "The progress of a society is measured by the education and well-being of its weakest members.",
-      quoteMarathi: "समाजाची प्रगती त्याच्या दुर्बल घटकांच्या शिक्षण आणि कल्याणावरून मोजली जाते.",
+      name: "Dr. Babasaheb Ambedkar",
+      nameMarathi: "डॉ. बाबासाहेब आंबेडकर",
+      image: drAmbedkar,
+      quoteEnglish: "Without education, the oppressed cannot rise, society cannot become equal, and true democracy cannot survive.",
+      quoteMarathi: "शिक्षणाशिवाय दबलेले घटक उन्नती करू शकत नाहीत, समाज समतावादी होऊ शकत नाही आणि खरी लोकशाही टिकू शकत नाही.",
     },
   ];
 
@@ -49,7 +41,7 @@ const Inspiration = () => {
         </div>
 
         {/* Inspiration Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {inspirations.map((person, index) => (
             <div
               key={person.name}
@@ -61,13 +53,11 @@ const Inspiration = () => {
                   {/* Decorative frame */}
                   <div className="absolute -inset-3 bg-gradient-to-br from-gold/30 via-gold/10 to-transparent rounded-full" />
                   <div className="absolute -inset-2 border-2 border-gold/40 rounded-full" />
-                  <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-card shadow-lg overflow-hidden bg-muted">
-                    <img
-                      src={person.image}
-                      alt={person.name}
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
+                  <img
+                    src={person.image}
+                    alt={person.name}
+                    className="relative w-32 h-32 md:w-36 md:h-36 object-cover rounded-full border-4 border-card shadow-lg"
+                  />
                 </div>
               </div>
 
