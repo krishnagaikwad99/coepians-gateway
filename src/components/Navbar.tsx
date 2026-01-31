@@ -23,7 +23,7 @@ const Navbar = () => {
           <a href="#home" className="flex items-center group">
             <img 
               src={logo} 
-              alt="Coepian's Academy - Strength, Truth, Endurance" 
+              alt="Er. COEPian's ACADEMY - Strength, Truth, Endurance" 
               className="h-12 md:h-16 w-auto object-contain"
             />
           </a>

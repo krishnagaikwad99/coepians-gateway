@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="mb-6">
               <img 
                 src={logo} 
-                alt="Coepian's Academy - Strength, Truth, Endurance" 
+                alt="Er. COEPian's ACADEMY - Strength, Truth, Endurance" 
                 className="h-20 w-auto object-contain brightness-0 invert"
               />
             </div>
@@ -100,7 +100,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © 2024 Coepians Academy. All rights reserved.
+              © 2024 Er. COEPian's ACADEMY. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-primary-foreground/60">
               <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
