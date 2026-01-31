@@ -1,6 +1,6 @@
-import mahatmaPhule from "@/assets/inspiration/mahatma-phule.jpg";
-import savitribaiPhule from "@/assets/inspiration/savitribai-phule.jpg";
 import drAmbedkar from "@/assets/inspiration/dr-ambedkar.jpg";
+import savitribaiPhule from "@/assets/inspiration/savitribai-phule.jpg";
+import mahatmaPhule from "@/assets/inspiration/mahatma-phule.jpg";
 import shahuMaharaj from "@/assets/inspiration/shahu-maharaj.jpg";
 
 const Inspiration = () => {
@@ -50,7 +50,7 @@ const Inspiration = () => {
 
         {/* Inspiration Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {inspirations.map((person, index) => (
+          {inspirations.map((person) => (
             <div
               key={person.name}
               className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-gold/50 hover:shadow-xl transition-all duration-500"
