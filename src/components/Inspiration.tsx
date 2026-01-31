@@ -9,6 +9,7 @@ const Inspiration = () => {
       name: "Dr. Babasaheb Ambedkar",
       nameMarathi: "डॉ. बाबासाहेब आंबेडकर",
       image: drAmbedkar,
+      imagePosition: "object-top",
       quoteEnglish: "A nation progresses only when education reaches every citizen equally.",
       quoteMarathi: "जेव्हा शिक्षण प्रत्येक नागरिकापर्यंत समानतेने पोहोचते तेव्हाच राष्ट्र प्रगती करते.",
     },
@@ -64,7 +65,7 @@ const Inspiration = () => {
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="relative w-28 h-28 lg:w-32 lg:h-32 object-cover rounded-full border-4 border-card shadow-lg"
+                    className={`relative w-28 h-28 lg:w-32 lg:h-32 object-cover rounded-full border-4 border-card shadow-lg ${person.imagePosition || ''}`}
                   />
                 </div>
               </div>
