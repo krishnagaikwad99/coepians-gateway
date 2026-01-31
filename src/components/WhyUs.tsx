@@ -54,7 +54,7 @@ const WhyUs = () => {
               <span className="text-gold">Difference</span>
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-8 leading-relaxed">
-              At Coepians Academy, we don't just teach – we inspire. Our unique approach combines academic rigor with holistic development, ensuring every student reaches their full potential.
+              At Er. COEPian's ACADEMY, we don't just teach – we inspire. Our unique approach combines academic rigor with holistic development, ensuring every student reaches their full potential.
             </p>
 
             {/* Key Highlights */}

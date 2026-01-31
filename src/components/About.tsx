@@ -43,7 +43,7 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              At Coepians Academy, we believe that true learning happens when concepts are understood deeply, not memorized.
+              At Er. COEPian's ACADEMY, we believe that true learning happens when concepts are understood deeply, not memorized.
             </p>
 
             {/* Highlighted Marathi Text */}

@@ -5,7 +5,7 @@ const Testimonials = () => {
     {
       name: "Priya Sharma",
       role: "IIT Delhi, CSE",
-      content: "Coepians Academy transformed my preparation journey. The faculty's dedication and the structured approach helped me achieve AIR 156 in JEE Advanced.",
+      content: "Er. COEPian's ACADEMY transformed my preparation journey. The faculty's dedication and the structured approach helped me achieve AIR 156 in JEE Advanced.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
     },
@@ -19,7 +19,7 @@ const Testimonials = () => {
     {
       name: "Ananya Patel",
       role: "IIT Bombay, ECE",
-      content: "What sets Coepians apart is their genuine care for students. Beyond academics, they helped me develop problem-solving skills that will last a lifetime.",
+      content: "What sets Er. COEPian's ACADEMY apart is their genuine care for students. Beyond academics, they helped me develop problem-solving skills that will last a lifetime.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
     },

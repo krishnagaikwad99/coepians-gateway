@@ -31,7 +31,7 @@ const Hero = () => {
 
           {/* Main Heading */}
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            Coepians Academy
+            Er. COEPian's ACADEMY
           </h1>
 
           {/* Cursive Tagline - Tilted */}
