@@ -1,13 +1,14 @@
 import mahatmaPhule from "@/assets/inspiration/mahatma-phule.jpg";
 import savitribaiPhule from "@/assets/inspiration/savitribai-phule.jpg";
 import drAmbedkar from "@/assets/inspiration/dr-ambedkar.jpg";
+import shahuMaharaj from "@/assets/inspiration/shahu-maharaj.jpg";
 
 const Inspiration = () => {
   const inspirations = [
     {
-      name: "Mahatma Jyotirao Phule",
-      nameMarathi: "महात्मा ज्योतिराव फुले",
-      image: mahatmaPhule,
+      name: "Dr. Babasaheb Ambedkar",
+      nameMarathi: "डॉ. बाबासाहेब आंबेडकर",
+      image: drAmbedkar,
       quoteEnglish: "A nation progresses only when education reaches every citizen equally.",
       quoteMarathi: "जेव्हा शिक्षण प्रत्येक नागरिकापर्यंत समानतेने पोहोचते तेव्हाच राष्ट्र प्रगती करते.",
     },
@@ -19,9 +20,16 @@ const Inspiration = () => {
       quoteMarathi: "शिक्षण हेच स्त्रीचे खरे बळ आणि भूषण आहे.",
     },
     {
-      name: "Dr. Babasaheb Ambedkar",
-      nameMarathi: "डॉ. बाबासाहेब आंबेडकर",
-      image: drAmbedkar,
+      name: "Mahatma Jyotirao Phule",
+      nameMarathi: "महात्मा ज्योतिराव फुले",
+      image: mahatmaPhule,
+      quoteEnglish: "True education teaches equality and humanity.",
+      quoteMarathi: "खरे शिक्षण समता आणि मानवता शिकवते.",
+    },
+    {
+      name: "Chhatrapati Shahu Maharaj",
+      nameMarathi: "छत्रपती शाहू महाराज",
+      image: shahuMaharaj,
       quoteEnglish: "Without education, the oppressed cannot rise, society cannot become equal, and true democracy cannot survive.",
       quoteMarathi: "शिक्षणाशिवाय दबलेले घटक उन्नती करू शकत नाहीत, समाज समतावादी होऊ शकत नाही आणि खरी लोकशाही टिकू शकत नाही.",
     },
@@ -41,7 +49,7 @@ const Inspiration = () => {
         </div>
 
         {/* Inspiration Cards */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {inspirations.map((person, index) => (
             <div
               key={person.name}
@@ -56,29 +64,29 @@ const Inspiration = () => {
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="relative w-32 h-32 md:w-36 md:h-36 object-cover rounded-full border-4 border-card shadow-lg"
+                    className="relative w-28 h-28 lg:w-32 lg:h-32 object-cover rounded-full border-4 border-card shadow-lg"
                   />
                 </div>
               </div>
 
               {/* Name */}
               <div className="text-center px-4 pb-2">
-                <h3 className="text-lg font-bold text-foreground">{person.name}</h3>
+                <h3 className="text-base lg:text-lg font-bold text-foreground">{person.name}</h3>
                 <p className="text-sm text-gold-dark font-medium">{person.nameMarathi}</p>
               </div>
 
               {/* Quotes */}
-              <div className="px-5 pb-6 space-y-3">
+              <div className="px-4 pb-5 space-y-2">
                 {/* English Quote */}
-                <div className="bg-primary/5 rounded-xl p-4 border-l-4 border-primary">
-                  <p className="text-sm text-muted-foreground italic leading-relaxed">
+                <div className="bg-primary/5 rounded-xl p-3 border-l-4 border-primary">
+                  <p className="text-xs lg:text-sm text-muted-foreground italic leading-relaxed">
                     "{person.quoteEnglish}"
                   </p>
                 </div>
 
                 {/* Marathi Quote */}
-                <div className="bg-gold/10 rounded-xl p-4 border-l-4 border-gold">
-                  <p className="text-sm text-foreground font-medium leading-relaxed">
+                <div className="bg-gold/10 rounded-xl p-3 border-l-4 border-gold">
+                  <p className="text-xs lg:text-sm text-foreground font-medium leading-relaxed">
                     "{person.quoteMarathi}"
                   </p>
                 </div>
