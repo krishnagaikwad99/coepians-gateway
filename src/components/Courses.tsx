@@ -1,72 +1,144 @@
-import { Clock, Users, Star, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, IndianRupee, BookOpen, Clock, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+
+interface Course {
+  title: string;
+  category: string;
+  duration: string;
+  description: string;
+  color: string;
+  fee: string;
+  feeDetails?: string[];
+  highlights: string[];
+}
+
 const Courses = () => {
-  const courses = [{
-    title: "Class 9th",
-    category: "Foundation",
-    duration: "1 Year",
-    students: "400+",
-    rating: "4.9",
-    description: "Build strong fundamentals in Science & Mathematics to prepare for competitive exams ahead.",
-    color: "from-sky-blue to-primary"
-  }, {
-    title: "Class 10th",
-    category: "Board + Foundation",
-    duration: "1 Year",
-    students: "500+",
-    rating: "4.9",
-    description: "Excel in board exams while building a solid base for JEE, NEET & MHT-CET preparation.",
-    color: "from-primary to-royal-blue"
-  }, {
-    title: "Class 11th",
-    category: "JEE / NEET / MHT-CET",
-    duration: "1 Year",
-    students: "800+",
-    rating: "4.8",
-    description: "Intensive coaching covering complete 11th syllabus with competitive exam focus.",
-    color: "from-gold to-gold-dark"
-  }, {
-    title: "Class 12th",
-    category: "JEE / NEET / MHT-CET",
-    duration: "1 Year",
-    students: "1000+",
-    rating: "4.9",
-    description: "Master 12th concepts with board exam excellence and entrance exam preparation.",
-    color: "from-royal-blue to-navy"
-  }, {
-    title: "JEE Main & Advanced",
-    category: "Engineering",
-    duration: "2 Years",
-    students: "1200+",
-    rating: "4.9",
-    description: "Comprehensive IIT-JEE preparation with expert faculty and proven methodology.",
-    color: "from-primary to-sky-blue"
-  }, {
-    title: "NEET-UG",
-    category: "Medical",
-    duration: "2 Years",
-    students: "900+",
-    rating: "4.8",
-    description: "Expert-led NEET preparation covering Physics, Chemistry, and Biology in depth.",
-    color: "from-gold-dark to-gold"
-  }, {
-    title: "MHT-CET",
-    category: "Engineering & Pharmacy",
-    duration: "1 Year",
-    students: "1500+",
-    rating: "4.9",
-    description: "Focused MHT-CET coaching for admission to top Maharashtra engineering & pharmacy colleges.",
-    color: "from-sky-blue to-royal-blue"
-  }, {
-    title: "Crash Course",
-    category: "Quick Revision",
-    duration: "3 Months",
-    students: "2000+",
-    rating: "4.7",
-    description: "Intensive revision program for JEE, NEET & MHT-CET appearing students.",
-    color: "from-navy to-primary"
-  }];
-  return <section id="courses" className="py-20 lg:py-32 bg-secondary/30">
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+
+  const courses: Course[] = [
+    {
+      title: "Class 5th to 8th",
+      category: "Foundation",
+      duration: "1 Year",
+      description: "Build strong fundamentals in Science & Mathematics from an early age.",
+      color: "from-sky-blue to-primary",
+      fee: "₹15,000/year",
+      highlights: [
+        "Strong foundation in Science & Maths",
+        "Conceptual clarity in mother tongue (Marathi)",
+        "Regular tests & assessments",
+        "Doubt clearing sessions"
+      ]
+    },
+    {
+      title: "Class 9th & 10th",
+      category: "Foundation + Board",
+      duration: "1 Year",
+      description: "Excel in board exams while building a solid base for JEE, NEET & MHT-CET preparation.",
+      color: "from-primary to-royal-blue",
+      fee: "₹15,000/year",
+      highlights: [
+        "Board exam excellence",
+        "Foundation for competitive exams",
+        "Complete syllabus coverage",
+        "Weekly tests & parent meetings"
+      ]
+    },
+    {
+      title: "Class 11th (PCM)",
+      category: "JEE MAINS / MHT-CET",
+      duration: "1 Year",
+      description: "Intensive coaching for Physics, Chemistry & Mathematics with JEE/MHT-CET focus.",
+      color: "from-gold to-gold-dark",
+      fee: "₹50,000/year",
+      highlights: [
+        "Physics, Chemistry, Mathematics",
+        "JEE Mains & MHT-CET focused",
+        "Expert faculty guidance",
+        "Regular mock tests"
+      ]
+    },
+    {
+      title: "Class 12th (PCM)",
+      category: "JEE MAINS / MHT-CET",
+      duration: "1 Year",
+      description: "Master 12th concepts with board exam excellence and engineering entrance preparation.",
+      color: "from-royal-blue to-navy",
+      fee: "₹50,000/year",
+      highlights: [
+        "Complete 12th syllabus",
+        "Board + Competitive preparation",
+        "Previous year paper practice",
+        "One-on-one doubt sessions"
+      ]
+    },
+    {
+      title: "Class 11th (PCB)",
+      category: "NEET / MHT-CET",
+      duration: "1 Year",
+      description: "Expert-led preparation covering Physics, Chemistry, and Biology for medical aspirants.",
+      color: "from-gold-dark to-gold",
+      fee: "₹50,000/year",
+      highlights: [
+        "Physics, Chemistry, Biology",
+        "NEET & MHT-CET focused",
+        "Biology practical sessions",
+        "NCERT based teaching"
+      ]
+    },
+    {
+      title: "Class 12th (PCB)",
+      category: "NEET / MHT-CET",
+      duration: "1 Year",
+      description: "Comprehensive NEET preparation with complete 12th syllabus coverage.",
+      color: "from-primary to-sky-blue",
+      fee: "₹50,000/year",
+      highlights: [
+        "Complete NEET syllabus",
+        "Board + NEET preparation",
+        "AIIMS/JIPMER pattern practice",
+        "Expert biology faculty"
+      ]
+    },
+    {
+      title: "Class 11th (PCMB)",
+      category: "Double Group",
+      duration: "1 Year",
+      description: "For students keeping both Engineering & Medical options open with all four subjects.",
+      color: "from-sky-blue to-royal-blue",
+      fee: "₹60,000/year",
+      highlights: [
+        "Physics, Chemistry, Maths & Biology",
+        "JEE + NEET preparation",
+        "Maximum career flexibility",
+        "Integrated schedule"
+      ]
+    },
+    {
+      title: "Class 12th (PCMB)",
+      category: "Double Group",
+      duration: "1 Year",
+      description: "Complete preparation for both Engineering & Medical entrance exams.",
+      color: "from-navy to-primary",
+      fee: "₹60,000/year",
+      highlights: [
+        "All four subjects covered",
+        "JEE + NEET + MHT-CET",
+        "Flexible career options",
+        "Intensive coaching"
+      ]
+    }
+  ];
+  return (
+    <section id="courses" className="py-20 lg:py-32 bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -82,47 +154,105 @@ const Courses = () => {
         </div>
 
         {/* Courses Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course, index) => <div key={course.title} className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-500">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {courses.map((course) => (
+            <div
+              key={course.title}
+              className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-500"
+            >
               {/* Course Header */}
-              <div className={`h-3 bg-gradient-to-r ${course.color}`} />
-              
-              <div className="p-6">
+              <div className={`h-2 bg-gradient-to-r ${course.color}`} />
+
+              <div className="p-5">
                 {/* Category Badge */}
-                <span className="inline-block px-3 py-1 bg-secondary text-secondary-foreground text-xs font-medium rounded-full mb-4">
+                <span className="inline-block px-3 py-1 bg-secondary text-secondary-foreground text-xs font-medium rounded-full mb-3">
                   {course.category}
                 </span>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {course.title}
                 </h3>
 
+                {/* Fee Badge */}
+                <div className="flex items-center gap-1 text-primary font-semibold mb-3">
+                  <IndianRupee className="w-4 h-4" />
+                  <span className="text-sm">{course.fee}</span>
+                </div>
+
                 {/* Description */}
-                <p className="text-muted-foreground text-sm mb-6 line-clamp-2">
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
                   {course.description}
                 </p>
 
-                {/* Stats */}
-                
-
                 {/* CTA */}
-                <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
+                <Button
+                  variant="outline"
+                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
+                  onClick={() => setSelectedCourse(course)}
+                >
                   Learn More
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
-            </div>)}
-        </div>
-
-        {/* View All Button */}
-        <div className="text-center mt-12">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            View All Courses
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+            </div>
+          ))}
         </div>
       </div>
-    </section>;
+
+      {/* Course Details Dialog */}
+      <Dialog open={!!selectedCourse} onOpenChange={() => setSelectedCourse(null)}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <div className={`h-2 bg-gradient-to-r ${selectedCourse?.color} -mx-6 -mt-6 mb-4 rounded-t-lg`} />
+            <DialogTitle className="text-xl">{selectedCourse?.title}</DialogTitle>
+            <DialogDescription>{selectedCourse?.category}</DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-4">
+            {/* Fee */}
+            <div className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg">
+              <IndianRupee className="w-5 h-5 text-primary" />
+              <div>
+                <p className="text-sm text-muted-foreground">Course Fee</p>
+                <p className="text-lg font-bold text-primary">{selectedCourse?.fee}</p>
+              </div>
+            </div>
+
+            {/* Duration */}
+            <div className="flex items-center gap-3 p-3 bg-secondary rounded-lg">
+              <Clock className="w-5 h-5 text-muted-foreground" />
+              <div>
+                <p className="text-sm text-muted-foreground">Duration</p>
+                <p className="font-medium">{selectedCourse?.duration}</p>
+              </div>
+            </div>
+
+            {/* Highlights */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <GraduationCap className="w-5 h-5 text-primary" />
+                <p className="font-semibold">Course Highlights</p>
+              </div>
+              <ul className="space-y-2 pl-7">
+                {selectedCourse?.highlights.map((highlight, idx) => (
+                  <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                    <BookOpen className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Description */}
+            <p className="text-sm text-muted-foreground border-t pt-4">
+              {selectedCourse?.description}
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </section>
+  );
 };
+
 export default Courses;
