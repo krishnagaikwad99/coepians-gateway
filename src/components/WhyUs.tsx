@@ -1,4 +1,4 @@
-import { CheckCircle2, TrendingUp, Shield, Lightbulb, HeartHandshake, Clock } from "lucide-react";
+import { CheckCircle2, TrendingUp, Shield, Lightbulb, HeartHandshake, Clock, Eye, Target, Sprout, Users } from "lucide-react";
 
 const WhyUs = () => {
   const reasons = [
@@ -34,6 +34,31 @@ const WhyUs = () => {
     },
   ];
 
+  const visionPoints = [
+    "Empower students from farmer families through quality education",
+    "Enable students to rise above limitations and achieve higher goals",
+    "Build confident, self-reliant contributors to society",
+  ];
+
+  const missionPoints = [
+    {
+      icon: Sprout,
+      text: "Provide accessible, affordable, and quality education to students from farming backgrounds",
+    },
+    {
+      icon: Target,
+      text: "Nurture academic excellence, life skills, and self-confidence among rural students",
+    },
+    {
+      icon: Users,
+      text: "Guide students toward higher education and career opportunities through mentorship",
+    },
+    {
+      icon: Lightbulb,
+      text: "Create an environment where students can dream big and break socio-economic barriers",
+    },
+  ];
+
   return (
     <section id="why-us" className="py-20 lg:py-32 bg-gradient-hero text-primary-foreground relative overflow-hidden">
       {/* Decorative Elements */}
@@ -43,6 +68,57 @@ const WhyUs = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
+        {/* Vision & Mission Section */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {/* Vision Card */}
+          <div className="p-8 bg-primary-foreground/5 backdrop-blur-sm rounded-2xl border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-all duration-300">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 rounded-xl bg-gold/20 text-gold flex items-center justify-center">
+                <Eye className="w-7 h-7" />
+              </div>
+              <div>
+                <span className="text-gold text-sm font-medium">Our</span>
+                <h3 className="text-2xl font-bold text-primary-foreground">Vision / दृष्टिकोन</h3>
+              </div>
+            </div>
+            <p className="text-primary-foreground/80 leading-relaxed mb-4">
+              To empower students from farmer families through quality education, enabling them to rise above limitations, achieve higher goals in life, and become confident, self-reliant contributors to society.
+            </p>
+            <ul className="space-y-3">
+              {visionPoints.map((point, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                  <span className="text-primary-foreground/90 text-sm">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Mission Card */}
+          <div className="p-8 bg-primary-foreground/5 backdrop-blur-sm rounded-2xl border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-all duration-300">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 rounded-xl bg-gold/20 text-gold flex items-center justify-center">
+                <Target className="w-7 h-7" />
+              </div>
+              <div>
+                <span className="text-gold text-sm font-medium">Our</span>
+                <h3 className="text-2xl font-bold text-primary-foreground">Mission / ध्येय</h3>
+              </div>
+            </div>
+            <div className="space-y-4">
+              {missionPoints.map((point, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-gold/10 text-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <point.icon className="w-4 h-4" />
+                  </div>
+                  <span className="text-primary-foreground/90 text-sm leading-relaxed">{point.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Existing Why Choose Us Content */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div>
