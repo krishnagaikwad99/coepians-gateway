@@ -14,8 +14,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             {/* Logo in White Box */}
-            <div className="mb-6 p-4 bg-white rounded-xl inline-block">
-              <img src={logo} alt="Er. COEPian's ACADEMY - Strength, Truth, Endurance" className="h-16 w-auto object-contain" />
+            <div className="mb-6 p-3 bg-white rounded-lg w-fit">
+              <img src={logo} alt="Er. COEPian's ACADEMY - Strength, Truth, Endurance" className="h-14 w-auto object-contain block" />
             </div>
             <p className="text-primary-foreground/70 mb-6 text-sm leading-relaxed">
               Empowering students with knowledge, skills, and values since 2009. Join us to transform your dreams into reality.
