@@ -22,9 +22,17 @@ const Footer = () => {
             </p>
             {/* Social Links */}
             <div className="flex gap-4">
-              {[Facebook, Twitter, Instagram, Linkedin, Youtube].map((Icon, index) => <a key={index} href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
-                  <Icon className="w-5 h-5" />
-                </a>)}
+              {[
+                { Icon: Facebook, href: "#" },
+                { Icon: Twitter, href: "#" },
+                { Icon: Instagram, href: "https://www.instagram.com/coepians_academy_?utm_source=qr&igsh=YXRxd3pzeHo2NTJv" },
+                { Icon: Linkedin, href: "#" },
+                { Icon: Youtube, href: "#" },
+              ].map((social, index) => (
+                <a key={index} href={social.href} target={social.href !== "#" ? "_blank" : undefined} rel={social.href !== "#" ? "noopener noreferrer" : undefined} className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
+                  <social.Icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
 
