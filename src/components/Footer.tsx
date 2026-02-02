@@ -37,6 +37,10 @@ const Footer = () => {
                   </a>
                 </li>)}
             </ul>
+            {/* Logo */}
+            <div className="mt-8 p-4 bg-white/10 rounded-xl flex items-center justify-center">
+              <img src={logo} alt="Er. COEPian's ACADEMY" className="h-16 w-auto object-contain" />
+            </div>
           </div>
 
           {/* Courses */}
