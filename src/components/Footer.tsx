@@ -13,8 +13,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-6">
-              <img src={logo} alt="Er. COEPian's ACADEMY - Strength, Truth, Endurance" className="h-20 w-auto object-contain brightness-0 invert" />
+            {/* Logo in White Box */}
+            <div className="mb-6 p-4 bg-white rounded-xl inline-block">
+              <img src={logo} alt="Er. COEPian's ACADEMY - Strength, Truth, Endurance" className="h-16 w-auto object-contain" />
             </div>
             <p className="text-primary-foreground/70 mb-6 text-sm leading-relaxed">
               Empowering students with knowledge, skills, and values since 2009. Join us to transform your dreams into reality.
@@ -37,10 +38,6 @@ const Footer = () => {
                   </a>
                 </li>)}
             </ul>
-            {/* Logo */}
-            <div className="mt-8 p-4 bg-white/10 rounded-xl flex items-center justify-center">
-              <img src={logo} alt="Er. COEPian's ACADEMY" className="h-16 w-auto object-contain" />
-            </div>
           </div>
 
           {/* Courses */}
