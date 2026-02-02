@@ -2,10 +2,11 @@ import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 const Hero = () => {
-  return <section id="home" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-16">
+  return <section id="home" className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-24">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroBg})`
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{
+      backgroundImage: `url(${heroBg})`,
+      backgroundPosition: 'center 30%'
     }}>
         <div className="absolute inset-0 bg-gradient-hero opacity-85" />
       </div>
