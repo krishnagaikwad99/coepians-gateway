@@ -118,8 +118,8 @@ const Courses = () => {
       highlights: [
         "Physics, Chemistry, Maths & Biology",
         "JEE + NEET preparation",
-        "Maximum career flexibility",
-        "Integrated schedule"
+        "Both MHT-CET (PCM & PCB)",
+        "Maximum career flexibility"
       ]
     },
     {
@@ -131,9 +131,9 @@ const Courses = () => {
       fee: "₹60,000/year",
       highlights: [
         "All four subjects covered",
-        "JEE + NEET + MHT-CET",
-        "Flexible career options",
-        "Intensive coaching"
+        "JEE + NEET preparation",
+        "Both MHT-CET (PCM & PCB)",
+        "Flexible career options"
       ]
     }
   ];
