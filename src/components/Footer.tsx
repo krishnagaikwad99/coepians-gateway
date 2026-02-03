@@ -29,9 +29,17 @@ const Footer = () => {
                 { Icon: Linkedin, href: "#" },
                 { Icon: Youtube, href: "#" },
               ].map((social, index) => (
-                <a key={index} href={social.href} target={social.href !== "#" ? "_blank" : undefined} rel={social.href !== "#" ? "noopener noreferrer" : undefined} className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
+                <button
+                  key={index}
+                  onClick={() => {
+                    if (social.href !== "#") {
+                      window.open(social.href, "_blank", "noopener,noreferrer");
+                    }
+                  }}
+                  className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors duration-300 cursor-pointer"
+                >
                   <social.Icon className="w-5 h-5" />
-                </a>
+                </button>
               ))}
             </div>
           </div>
