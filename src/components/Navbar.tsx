@@ -43,9 +43,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Enroll Now
-            </Button>
+            <a href="#contact">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                Enroll Now
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -72,9 +74,11 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="px-4 pt-2">
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Enroll Now
-                </Button>
+                <a href="#contact" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                    Enroll Now
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
