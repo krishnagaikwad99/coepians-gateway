@@ -66,7 +66,7 @@ const Hero = () => {
       </div>
 
       {/* Watermark Logo */}
-      <div className="absolute bottom-8 right-8 opacity-20 hidden md:block">
+      <div className="absolute bottom-8 right-8 opacity-60 hidden md:block">
         <img 
           src={logo} 
           alt="" 
