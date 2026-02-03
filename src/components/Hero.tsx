@@ -1,6 +1,7 @@
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/logo.jpg";
 const Hero = () => {
   return <section id="home" className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-24">
       {/* Background Image */}
@@ -16,6 +17,18 @@ const Hero = () => {
       <div className="absolute bottom-1/4 right-10 w-64 h-64 bg-gold/10 rounded-full blur-3xl animate-float" style={{
       animationDelay: "1.5s"
     }} />
+      
+      {/* Watermark Logo */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <img 
+          src={logo} 
+          alt="" 
+          className="w-[500px] md:w-[700px] lg:w-[900px] h-auto opacity-[0.04] select-none"
+          style={{
+            filter: 'grayscale(100%) brightness(2)',
+          }}
+        />
+      </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
