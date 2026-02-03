@@ -1,9 +1,17 @@
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 import logo from "@/assets/logo.jpg";
+import CampusTour from "./CampusTour";
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return <section id="home" className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-24">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{
@@ -53,14 +61,15 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center animate-fade-in-up" style={{
           animationDelay: "0.8s"
         }}>
-            <Button size="lg" className="bg-gold hover:bg-gold-dark text-accent-foreground font-semibold px-6 py-5 text-base shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button 
+              size="lg" 
+              onClick={scrollToContact}
+              className="bg-gold hover:bg-gold-dark text-accent-foreground font-semibold px-6 py-5 text-base shadow-lg hover:shadow-xl transition-all duration-300"
+            >
               Get Started
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-6 py-5 text-base">
-              <Play className="mr-2 w-5 h-5" />
-              Watch Tour
-            </Button>
+            <CampusTour variant="hero" />
           </div>
         </div>
       </div>
