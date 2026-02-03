@@ -17,30 +17,32 @@ const Footer = () => {
             <div className="mb-6 p-3 bg-white rounded-lg w-fit">
               <img src={logo} alt="Er. COEPian's ACADEMY - Strength, Truth, Endurance" className="h-14 w-auto object-contain block" />
             </div>
-            <p className="text-primary-foreground/70 mb-6 text-sm leading-relaxed">
-              Empowering students with knowledge, skills, and values since 2009. Join us to transform your dreams into reality.
-            </p>
+            <p className="text-primary-foreground/70 mb-6 text-sm leading-relaxed">Empowering students with knowledge, skills, and values.
+Join us to transform your dreams into reality.</p>
             {/* Social Links */}
             <div className="flex gap-4">
-              {[
-                { Icon: Facebook, href: "#" },
-                { Icon: Twitter, href: "#" },
-                { Icon: Instagram, href: "https://www.instagram.com/coepians_academy_?utm_source=qr&igsh=YXRxd3pzeHo2NTJv" },
-                { Icon: Linkedin, href: "#" },
-                { Icon: Youtube, href: "#" },
-              ].map((social, index) => (
-                <button
-                  key={index}
-                  onClick={() => {
-                    if (social.href !== "#") {
-                      window.open(social.href, "_blank", "noopener,noreferrer");
-                    }
-                  }}
-                  className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors duration-300 cursor-pointer"
-                >
+              {[{
+              Icon: Facebook,
+              href: "#"
+            }, {
+              Icon: Twitter,
+              href: "#"
+            }, {
+              Icon: Instagram,
+              href: "https://www.instagram.com/coepians_academy_?utm_source=qr&igsh=YXRxd3pzeHo2NTJv"
+            }, {
+              Icon: Linkedin,
+              href: "#"
+            }, {
+              Icon: Youtube,
+              href: "#"
+            }].map((social, index) => <button key={index} onClick={() => {
+              if (social.href !== "#") {
+                window.open(social.href, "_blank", "noopener,noreferrer");
+              }
+            }} className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors duration-300 cursor-pointer">
                   <social.Icon className="w-5 h-5" />
-                </button>
-              ))}
+                </button>)}
             </div>
           </div>
 
