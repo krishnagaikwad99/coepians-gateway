@@ -73,13 +73,9 @@ Join us to transform your dreams into reality.</p>
       {/* Bottom Bar */}
       <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-primary-foreground/60 text-sm">© 2024 Er. COEPian's Academy. All rights reserved.</p>
-            <div className="flex gap-6 text-sm text-primary-foreground/60">
-              <a href="#" className="hover:text-gold transition-colors">© 2026 Er. COEPian's Academy. All rights reserved.</a>
-              <a href="#" className="hover:text-gold transition-colors">Terms of Service</a>
-            </div>
-          </div>
+          <p className="text-primary-foreground/60 text-sm text-center">
+            Created by Krishna Gaikwad | COEPian's Academy Alumnus
+          </p>
         </div>
       </div>
 
