@@ -16,9 +16,9 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{
       backgroundImage: `url(${heroBg})`,
-      backgroundPosition: 'center 30%'
+      backgroundPosition: 'center 45%'
     }}>
-        <div className="absolute inset-0 bg-gradient-hero opacity-85" />
+        <div className="absolute inset-0 bg-gradient-hero opacity-80" />
       </div>
 
       {/* Decorative Elements */}
