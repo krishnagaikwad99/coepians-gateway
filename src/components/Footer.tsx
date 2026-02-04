@@ -10,9 +10,9 @@ const Footer = () => {
   return <footer className="bg-navy text-primary-foreground">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-2 gap-12">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div>
             {/* Logo in White Box */}
             <div className="mb-6 p-3 bg-white rounded-lg w-fit">
               <img src={logo} alt="Er. COEPian's ACADEMY - Strength, Truth, Endurance" className="h-14 w-auto object-contain block" />
@@ -44,30 +44,6 @@ Join us to transform your dreams into reality.</p>
                   <social.Icon className="w-5 h-5" />
                 </button>)}
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold text-lg mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              {["Home", "About Us", "Courses", "Faculty", "Gallery", "Contact"].map(link => <li key={link}>
-                  <a href={`#${link.toLowerCase().replace(" ", "-")}`} className="text-primary-foreground/70 hover:text-gold transition-colors duration-200">
-                    {link}
-                  </a>
-                </li>)}
-            </ul>
-          </div>
-
-          {/* Courses */}
-          <div>
-            <h4 className="font-semibold text-lg mb-6">Our Courses</h4>
-            <ul className="space-y-3">
-              {["Class 9th & 10th", "Class 11th & 12th", "JEE Main & Advanced", "NEET-UG", "MHT-CET", "Crash Course"].map(course => <li key={course}>
-                  <a href="#courses" className="text-primary-foreground/70 hover:text-gold transition-colors duration-200">
-                    {course}
-                  </a>
-                </li>)}
-            </ul>
           </div>
 
           {/* Contact Info */}
