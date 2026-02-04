@@ -57,18 +57,10 @@ const Hero = () => {
             Unlock your potential with world-class education. Join thousands of successful students who transformed their dreams into reality.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center animate-fade-in-up" style={{
+          {/* CTA Button */}
+          <div className="flex justify-center items-center animate-fade-in-up" style={{
           animationDelay: "0.8s"
         }}>
-            <Button 
-              size="lg" 
-              onClick={scrollToContact}
-              className="bg-gold hover:bg-gold-dark text-accent-foreground font-semibold px-6 py-5 text-base shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Get Started
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
             <CampusTour variant="hero" />
           </div>
         </div>

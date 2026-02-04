@@ -44,11 +44,11 @@ const CampusTour = ({ variant = "default" }: CampusTourProps) => {
     <>
       <Button
         size="lg"
-        variant="outline"
+        variant={variant === "hero" ? "default" : "outline"}
         onClick={() => setIsOpen(true)}
         className={
           variant === "hero"
-            ? "border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-6 py-5 text-base"
+            ? "bg-gold hover:bg-gold-dark text-accent-foreground font-semibold px-6 py-5 text-base shadow-lg hover:shadow-xl transition-all duration-300"
             : ""
         }
       >
