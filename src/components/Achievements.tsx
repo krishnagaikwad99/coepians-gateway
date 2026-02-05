@@ -36,6 +36,13 @@ import ictAnushka from "@/assets/students/ict-anushka-ghodake.jpg";
 import spceSneha from "@/assets/students/spce-sneha-vagare.jpg";
 import spceAditi from "@/assets/students/spce-aditi-jagtap.jpg";
 import spcePranali from "@/assets/students/spce-pranali-dhumal.jpg";
+
+// Import student images - GCEK
+import gcekNikhil from "@/assets/students/gcek-nikhil-kokare.jpg";
+import gcekSharmin from "@/assets/students/gcek-sharmin-kazi.jpg";
+import gcekSrushti from "@/assets/students/gcek-srushti-shaha.jpg";
+import gcekVaishnavi from "@/assets/students/gcek-vaishnavi-mane.jpg";
+import gcekAnushka from "@/assets/students/gcek-anushka-dhaware.jpg";
 import spceAmruta from "@/assets/students/spce-amruta-kshirsagar.jpg";
 
 const resultImages = [
@@ -94,6 +101,17 @@ const collegeStudents: Record<string, CollegeData> = {
       { name: "Amruta Kshirsagar", image: spceAmruta },
     ],
   },
+  gcek: {
+    name: "GCEK Karad",
+    fullName: "Government College of Engineering, Karad",
+    students: [
+      { name: "Nikhil Kokare", image: gcekNikhil },
+      { name: "Sharmin Kazi", image: gcekSharmin },
+      { name: "Srushti Shaha", image: gcekSrushti },
+      { name: "Vaishnavi Mane", image: gcekVaishnavi },
+      { name: "Anushka Dhaware", image: gcekAnushka },
+    ],
+  },
 };
 
 interface Stat {
@@ -109,6 +127,7 @@ const stats: Stat[] = [
   { icon: GraduationCap, value: "6+", label: "COEP Selections", collegeKey: "coep" },
   { icon: Trophy, value: "4+", label: "ICT Mumbai", collegeKey: "ict" },
   { icon: Building2, value: "4+", label: "SPCE Mumbai", collegeKey: "spce" },
+  { icon: GraduationCap, value: "5+", label: "GCEK Karad", collegeKey: "gcek" },
 ];
 
 const Achievements = () => {
@@ -146,7 +165,7 @@ const Achievements = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mb-16">
           {stats.map((stat, index) => (
             <div
               key={index}
