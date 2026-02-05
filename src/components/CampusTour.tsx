@@ -14,14 +14,16 @@ import campus3 from "@/assets/campus/campus-3.jpg";
 import campus4 from "@/assets/campus/campus-4.jpg";
 import campus5 from "@/assets/campus/campus-5.jpg";
 import campus6 from "@/assets/campus/campus-6.jpg";
+import campus7 from "@/assets/campus/campus-7.jpg";
 
 const campusImages = [
-  { src: campus1, title: "Academy Building" },
+  { src: campus1, title: "Felicitation Ceremony" },
   { src: campus2, title: "Classroom Sessions" },
   { src: campus3, title: "Learning Environment" },
   { src: campus4, title: "Our Stalwarts 2024" },
   { src: campus5, title: "Our Stalwarts 2025" },
   { src: campus6, title: "Campus Life" },
+  { src: campus7, title: "Team Photo" },
 ];
 
 interface CampusTourProps {
