@@ -27,7 +27,7 @@ const resultImages = [
 const stats = [
   { icon: Trophy, value: "99.47%", label: "Highest in PCM" },
   { icon: Award, value: "99.35%", label: "Highest in PCB" },
-  { icon: GraduationCap, value: "50+", label: "COEP Selections" },
+  { icon: GraduationCap, value: "5+", label: "COEP Selections" },
   { icon: Trophy, value: "5+", label: "ICT Mumbai" },
 ];
 
