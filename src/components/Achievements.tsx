@@ -1,5 +1,11 @@
-import { Trophy, Award, GraduationCap, ChevronLeft, ChevronRight } from "lucide-react";
+import { Trophy, Award, GraduationCap, ChevronLeft, ChevronRight, Building2, X } from "lucide-react";
 import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 // Import result images
 import results2024_25 from "@/assets/results/results-2024-25.jpg";
@@ -11,6 +17,26 @@ import toppersHSC from "@/assets/results/toppers-hsc.jpg";
 import toppers2024 from "@/assets/results/toppers-2024.jpg";
 import newspaperFeature from "@/assets/results/newspaper-feature.jpg";
 import stalwarts from "@/assets/results/stalwarts.jpg";
+
+// Import student images - COEP
+import coepPrerana from "@/assets/students/coep-prerana-gosavi.jpg";
+import coepMayur from "@/assets/students/coep-mayur-chavan.jpg";
+import coepMinal from "@/assets/students/coep-minal-rathod.jpg";
+import coepShivanjali from "@/assets/students/coep-shivanjali-shinde.jpg";
+import coepShreyash from "@/assets/students/coep-shreyash-shelke.jpg";
+import coepSharayu from "@/assets/students/coep-sharayu-sonawane.jpg";
+
+// Import student images - ICT
+import ictVaishnavi from "@/assets/students/ict-vaishnavi-thombre.jpg";
+import ictPrachi from "@/assets/students/ict-prachi-masal.jpg";
+import ictPragati from "@/assets/students/ict-pragati-gaikwad.jpg";
+import ictAnushka from "@/assets/students/ict-anushka-ghodake.jpg";
+
+// Import student images - SPCE
+import spceSneha from "@/assets/students/spce-sneha-vagare.jpg";
+import spceAditi from "@/assets/students/spce-aditi-jagtap.jpg";
+import spcePranali from "@/assets/students/spce-pranali-dhumal.jpg";
+import spceAmruta from "@/assets/students/spce-amruta-kshirsagar.jpg";
 
 const resultImages = [
   { src: results2024_25, title: "Academic Results 2024-25", description: "COEP, SPCE & GCEK Selections" },
@@ -24,15 +50,70 @@ const resultImages = [
   { src: stalwarts, title: "Our Stalwarts", description: "Pride of Coepian's Academy" },
 ];
 
-const stats = [
+interface Student {
+  name: string;
+  image: string;
+}
+
+interface CollegeData {
+  name: string;
+  fullName: string;
+  students: Student[];
+}
+
+const collegeStudents: Record<string, CollegeData> = {
+  coep: {
+    name: "COEP",
+    fullName: "College of Engineering, Pune",
+    students: [
+      { name: "Prerana Gosavi", image: coepPrerana },
+      { name: "Mayur Chavan", image: coepMayur },
+      { name: "Minal Rathod", image: coepMinal },
+      { name: "Shivanjali Shinde", image: coepShivanjali },
+      { name: "Shreyash Shelke", image: coepShreyash },
+      { name: "Sharayu Sonawane", image: coepSharayu },
+    ],
+  },
+  ict: {
+    name: "ICT Mumbai",
+    fullName: "Institute of Chemical Technology, Mumbai",
+    students: [
+      { name: "Vaishnavi Thombre", image: ictVaishnavi },
+      { name: "Prachi Masal", image: ictPrachi },
+      { name: "Pragati Gaikwad", image: ictPragati },
+      { name: "Anushka Ghodake", image: ictAnushka },
+    ],
+  },
+  spce: {
+    name: "SPCE Mumbai",
+    fullName: "Sardar Patel College of Engineering, Mumbai",
+    students: [
+      { name: "Sneha Vagare", image: spceSneha },
+      { name: "Aditi Jagtap", image: spceAditi },
+      { name: "Pranali Dhumal", image: spcePranali },
+      { name: "Amruta Kshirsagar", image: spceAmruta },
+    ],
+  },
+};
+
+interface Stat {
+  icon: typeof Trophy;
+  value: string;
+  label: string;
+  collegeKey?: string;
+}
+
+const stats: Stat[] = [
   { icon: Trophy, value: "99.47%", label: "Highest in PCM" },
   { icon: Award, value: "99.35%", label: "Highest in PCB" },
-  { icon: GraduationCap, value: "5+", label: "COEP Selections" },
-  { icon: Trophy, value: "5+", label: "ICT Mumbai" },
+  { icon: GraduationCap, value: "6+", label: "COEP Selections", collegeKey: "coep" },
+  { icon: Trophy, value: "4+", label: "ICT Mumbai", collegeKey: "ict" },
+  { icon: Building2, value: "4+", label: "SPCE Mumbai", collegeKey: "spce" },
 ];
 
 const Achievements = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCollege, setSelectedCollege] = useState<string | null>(null);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % resultImages.length);
@@ -40,6 +121,12 @@ const Achievements = () => {
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + resultImages.length) % resultImages.length);
+  };
+
+  const handleStatClick = (collegeKey?: string) => {
+    if (collegeKey) {
+      setSelectedCollege(collegeKey);
+    }
   };
 
   return (
@@ -59,17 +146,29 @@ const Achievements = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 mb-16">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-card rounded-2xl p-6 text-center shadow-sm border border-border hover:border-primary/30 transition-all duration-300"
+              onClick={() => handleStatClick(stat.collegeKey)}
+              className={`bg-card rounded-2xl p-5 md:p-6 text-center shadow-sm border border-border transition-all duration-300 ${
+                stat.collegeKey
+                  ? "hover:border-primary/50 hover:shadow-lg cursor-pointer group"
+                  : "hover:border-primary/30"
+              }`}
             >
-              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                <stat.icon className="w-6 h-6 text-primary" />
+              <div className={`w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 rounded-full flex items-center justify-center ${
+                stat.collegeKey ? "bg-primary/10 group-hover:bg-primary/20" : "bg-primary/10"
+              }`}>
+                <stat.icon className={`w-5 h-5 md:w-6 md:h-6 ${stat.collegeKey ? "text-primary group-hover:scale-110 transition-transform" : "text-primary"}`} />
               </div>
-              <p className="text-3xl font-bold text-primary mb-1">{stat.value}</p>
-              <p className="text-sm text-muted-foreground">{stat.label}</p>
+              <p className="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.value}</p>
+              <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
+              {stat.collegeKey && (
+                <p className="text-xs text-primary/70 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Click to view students
+                </p>
+              )}
             </div>
           ))}
         </div>
@@ -126,11 +225,11 @@ const Achievements = () => {
         {/* College Logos / Names */}
         <div className="mt-16 text-center">
           <p className="text-sm text-muted-foreground mb-6">Our students are studying at</p>
-          <div className="flex flex-wrap justify-center gap-8 text-foreground/70">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-foreground/70">
             {["COEP Pune", "ICT Mumbai", "SPCE Mumbai", "GCEK Karad", "BVCOEW"].map((college) => (
               <div
                 key={college}
-                className="px-6 py-3 bg-card rounded-full border border-border text-sm font-medium"
+                className="px-4 md:px-6 py-2 md:py-3 bg-card rounded-full border border-border text-xs md:text-sm font-medium"
               >
                 {college}
               </div>
@@ -138,6 +237,44 @@ const Achievements = () => {
           </div>
         </div>
       </div>
+
+      {/* Students Modal */}
+      <Dialog open={!!selectedCollege} onOpenChange={() => setSelectedCollege(null)}>
+        <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-xl md:text-2xl font-bold text-center">
+              {selectedCollege && collegeStudents[selectedCollege]?.name} Selections
+            </DialogTitle>
+            <p className="text-sm text-muted-foreground text-center">
+              {selectedCollege && collegeStudents[selectedCollege]?.fullName}
+            </p>
+          </DialogHeader>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-4">
+            {selectedCollege &&
+              collegeStudents[selectedCollege]?.students.map((student, index) => (
+                <div
+                  key={index}
+                  className="group bg-card rounded-xl overflow-hidden border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="aspect-[3/4] overflow-hidden bg-muted">
+                    <img
+                      src={student.image}
+                      alt={student.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-3 md:p-4 text-center bg-gradient-to-t from-primary/5 to-transparent">
+                    <p className="font-semibold text-foreground text-sm md:text-base">{student.name}</p>
+                    <p className="text-xs text-primary mt-1">
+                      {selectedCollege && collegeStudents[selectedCollege]?.name}
+                    </p>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
