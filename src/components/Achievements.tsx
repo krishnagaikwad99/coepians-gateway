@@ -38,6 +38,7 @@ import ictAnkita from "@/assets/students/ict-ankita-shinde.jpg";
 import spceSneha from "@/assets/students/spce-sneha-vagare.jpg";
 import spceAditi from "@/assets/students/spce-aditi-jagtap.jpg";
 import spcePranali from "@/assets/students/spce-pranali-dhumal.jpg";
+import spceTejashree from "@/assets/students/spce-tejashree-dhaigude.jpg";
 
 // Import student images - GCEK
 import gcekNikhil from "@/assets/students/gcek-nikhil-kokare.jpg";
@@ -104,6 +105,7 @@ const collegeStudents: Record<string, CollegeData> = {
       { name: "Aditi Jagtap", image: spceAditi },
       { name: "Pranali Dhumal", image: spcePranali },
       { name: "Amruta Kshirsagar", image: spceAmruta },
+      { name: "Tejashree Dhaigude", image: spceTejashree },
     ],
   },
   gcek: {
@@ -132,7 +134,7 @@ const stats: Stat[] = [
   { icon: Award, value: "99.35%", label: "Highest in PCB" },
   { icon: GraduationCap, value: "6+", label: "COEP Selections", collegeKey: "coep" },
   { icon: Trophy, value: "6+", label: "ICT Mumbai", collegeKey: "ict" },
-  { icon: Building2, value: "4+", label: "SPCE Mumbai", collegeKey: "spce" },
+  { icon: Building2, value: "5+", label: "SPCE Mumbai", collegeKey: "spce" },
   { icon: GraduationCap, value: "6+", label: "GCEK Karad", collegeKey: "gcek" },
 ];
 
