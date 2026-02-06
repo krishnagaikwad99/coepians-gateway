@@ -23,7 +23,7 @@ const campusImages = [
   { src: campus4, title: "Our Stalwarts 2024" },
   { src: campus5, title: "Our Stalwarts 2025" },
   { src: campus6, title: "Campus Life" },
-  { src: campus7, title: "Team Photo" },
+  { src: campus7, title: "Our Stalwarts of 2025" },
 ];
 
 interface CampusTourProps {
