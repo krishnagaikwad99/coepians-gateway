@@ -156,8 +156,8 @@ const stats: Stat[] = [
   { icon: Trophy, value: "6+", label: "ICT Mumbai", collegeKey: "ict" },
   { icon: Building2, value: "5+", label: "SPCE Mumbai", collegeKey: "spce" },
   { icon: GraduationCap, value: "6+", label: "GCEK Karad", collegeKey: "gcek" },
-  { icon: Award, value: "1+", label: "GCAK Kolhapur", collegeKey: "gcak" },
-  { icon: Building2, value: "1+", label: "BVCOEW", collegeKey: "bvcoew" },
+  { icon: Award, value: "", label: "GCAK Kolhapur", collegeKey: "gcak" },
+  { icon: Building2, value: "", label: "BVCOEW", collegeKey: "bvcoew" },
 ];
 
 const Achievements = () => {
@@ -209,10 +209,10 @@ const Achievements = () => {
               <div className={`w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 rounded-full flex items-center justify-center ${
                 stat.collegeKey ? "bg-primary/10 group-hover:bg-primary/20" : "bg-primary/10"
               }`}>
-                <stat.icon className={`w-5 h-5 md:w-6 md:h-6 ${stat.collegeKey ? "text-primary group-hover:scale-110 transition-transform" : "text-primary"}`} />
+              <stat.icon className={`w-5 h-5 md:w-6 md:h-6 ${stat.collegeKey ? "text-primary group-hover:scale-110 transition-transform" : "text-primary"}`} />
               </div>
-              <p className="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.value}</p>
-              <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
+              {stat.value && <p className="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.value}</p>}
+              <p className={`text-xs md:text-sm text-muted-foreground ${!stat.value ? "text-base font-semibold text-foreground" : ""}`}>{stat.label}</p>
               {stat.collegeKey && (
                 <p className="text-xs text-primary/70 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   Click to view students
@@ -226,7 +226,7 @@ const Achievements = () => {
         <div className="relative max-w-4xl mx-auto">
           {/* Main Image */}
           <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-border bg-card">
-            <div className="aspect-[4/3] relative">
+            <div className="aspect-[3/4] md:aspect-[4/3] relative">
               <img
                 src={resultImages[currentIndex].src}
                 alt={resultImages[currentIndex].title}
