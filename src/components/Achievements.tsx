@@ -49,6 +49,12 @@ import gcekAnushka from "@/assets/students/gcek-anushka-dhaware.jpg";
 import gcekPriti from "@/assets/students/gcek-priti-shelke.jpg";
 import spceAmruta from "@/assets/students/spce-amruta-kshirsagar.jpg";
 
+// Import student images - GCAK (Gov. College of Agri. Kolhapur)
+import gcakShamika from "@/assets/students/gcak-shamika-mahamuni.jpg";
+
+// Import student images - BVCOEW
+import bvcoewJanhavi from "@/assets/students/bvcoew-janhavi-mahanavar.jpg";
+
 const resultImages = [
   { src: results2024_25, title: "Academic Results 2024-25", description: "COEP, SPCE & GCEK Selections" },
   { src: results2024_25_2, title: "Results 2024-25", description: "More selections in top colleges" },
@@ -120,6 +126,20 @@ const collegeStudents: Record<string, CollegeData> = {
       { name: "Priti Shelke", image: gcekPriti },
     ],
   },
+  gcak: {
+    name: "GCAK Kolhapur",
+    fullName: "Government College of Agriculture, Kolhapur",
+    students: [
+      { name: "Shamika Mahamuni", image: gcakShamika },
+    ],
+  },
+  bvcoew: {
+    name: "BVCOEW",
+    fullName: "Bharati Vidyapeeth College of Engineering for Women",
+    students: [
+      { name: "Janhavi Mahanavar", image: bvcoewJanhavi },
+    ],
+  },
 };
 
 interface Stat {
@@ -136,6 +156,8 @@ const stats: Stat[] = [
   { icon: Trophy, value: "6+", label: "ICT Mumbai", collegeKey: "ict" },
   { icon: Building2, value: "5+", label: "SPCE Mumbai", collegeKey: "spce" },
   { icon: GraduationCap, value: "6+", label: "GCEK Karad", collegeKey: "gcek" },
+  { icon: Award, value: "1+", label: "GCAK Kolhapur", collegeKey: "gcak" },
+  { icon: Building2, value: "1+", label: "BVCOEW", collegeKey: "bvcoew" },
 ];
 
 const Achievements = () => {
