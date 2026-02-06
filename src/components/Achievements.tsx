@@ -43,6 +43,7 @@ import gcekSharmin from "@/assets/students/gcek-sharmin-kazi.jpg";
 import gcekSrushti from "@/assets/students/gcek-srushti-shaha.jpg";
 import gcekVaishnavi from "@/assets/students/gcek-vaishnavi-mane.jpg";
 import gcekAnushka from "@/assets/students/gcek-anushka-dhaware.jpg";
+import gcekPriti from "@/assets/students/gcek-priti-shelke.jpg";
 import spceAmruta from "@/assets/students/spce-amruta-kshirsagar.jpg";
 
 const resultImages = [
@@ -110,6 +111,7 @@ const collegeStudents: Record<string, CollegeData> = {
       { name: "Srushti Shaha", image: gcekSrushti },
       { name: "Vaishnavi Mane", image: gcekVaishnavi },
       { name: "Anushka Dhaware", image: gcekAnushka },
+      { name: "Priti Shelke", image: gcekPriti },
     ],
   },
 };
@@ -127,7 +129,7 @@ const stats: Stat[] = [
   { icon: GraduationCap, value: "6+", label: "COEP Selections", collegeKey: "coep" },
   { icon: Trophy, value: "4+", label: "ICT Mumbai", collegeKey: "ict" },
   { icon: Building2, value: "4+", label: "SPCE Mumbai", collegeKey: "spce" },
-  { icon: GraduationCap, value: "5+", label: "GCEK Karad", collegeKey: "gcek" },
+  { icon: GraduationCap, value: "6+", label: "GCEK Karad", collegeKey: "gcek" },
 ];
 
 const Achievements = () => {
