@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import heroBg from "@/assets/hero-bg.jpg";
 import logo from "@/assets/logo.jpg";
 import CampusTour from "./CampusTour";
@@ -57,10 +58,29 @@ const Hero = () => {
             Unlock your potential with world-class education. Join thousands of successful students who transformed their dreams into reality.
           </p>
 
-          {/* CTA Button */}
-          <div className="flex justify-center items-center animate-fade-in-up" style={{
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fade-in-up" style={{
           animationDelay: "0.8s"
         }}>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button size="lg" className="bg-gold hover:bg-gold/90 text-primary-foreground font-semibold px-8 text-base">
+                  Enroll Now <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-72 p-3 flex flex-col gap-2">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoXHAmzlRp0M0DcPh-uUIJwZwsgv9y-nbpBvCz_At93t0vzQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="w-full justify-start text-sm">
+                    5th to 10th Foundation Batch
+                  </Button>
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd27aEWO9795P7apaBpW-Ln0EGBswNGNKYjpTvfcV4GCIk9PA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="w-full justify-start text-sm">
+                    11th and 12th
+                  </Button>
+                </a>
+              </PopoverContent>
+            </Popover>
             <CampusTour variant="hero" />
           </div>
         </div>

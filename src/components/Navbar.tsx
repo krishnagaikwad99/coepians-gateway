@@ -41,14 +41,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <a href="#contact">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                Enroll Now
-              </Button>
-            </a>
-          </div>
+          {/* CTA Button removed - moved to Hero */}
 
           {/* Mobile Menu Button */}
           <button
@@ -73,10 +66,15 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <div className="px-4 pt-2">
-                <a href="#contact" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                    Enroll Now
+              <div className="px-4 pt-2 flex flex-col gap-2">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoXHAmzlRp0M0DcPh-uUIJwZwsgv9y-nbpBvCz_At93t0vzQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-xs">
+                    5th to 10th Foundation Batch
+                  </Button>
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd27aEWO9795P7apaBpW-Ln0EGBswNGNKYjpTvfcV4GCIk9PA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-xs">
+                    11th and 12th
                   </Button>
                 </a>
               </div>
