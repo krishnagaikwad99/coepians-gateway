@@ -64,7 +64,7 @@ const Hero = () => {
         }}>
             <Popover>
               <PopoverTrigger asChild>
-                <Button size="lg" className="bg-gold hover:bg-gold/90 text-primary-foreground font-semibold px-8 text-base">
+                <Button size="lg" className="bg-gold hover:bg-gold/90 text-black font-semibold px-8 text-base">
                   Enroll Now <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </PopoverTrigger>
