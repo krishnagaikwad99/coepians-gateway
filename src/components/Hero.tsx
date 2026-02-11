@@ -68,14 +68,14 @@ const Hero = () => {
                   Enroll Now <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-72 p-3 flex flex-col gap-2">
+              <PopoverContent className="w-72 p-3 flex flex-col gap-2 bg-primary border-primary/50">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoXHAmzlRp0M0DcPh-uUIJwZwsgv9y-nbpBvCz_At93t0vzQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="w-full justify-start text-sm">
+                  <Button variant="outline" className="w-full justify-start text-sm text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10 hover:text-primary-foreground bg-transparent">
                     5th to 10th Foundation Batch
                   </Button>
                 </a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSd27aEWO9795P7apaBpW-Ln0EGBswNGNKYjpTvfcV4GCIk9PA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="w-full justify-start text-sm">
+                  <Button variant="outline" className="w-full justify-start text-sm text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10 hover:text-primary-foreground bg-transparent">
                     11th and 12th
                   </Button>
                 </a>
