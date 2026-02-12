@@ -1,4 +1,4 @@
-import { CheckCircle2, TrendingUp, Shield, Lightbulb, HeartHandshake, Clock, Eye, Target, Sprout, Users } from "lucide-react";
+import { CheckCircle2, TrendingUp, Shield, Lightbulb, HeartHandshake, Eye, Target, Sprout, Users } from "lucide-react";
 
 const WhyUs = () => {
   const reasons = [
@@ -21,11 +21,6 @@ const WhyUs = () => {
       icon: HeartHandshake,
       title: "Personal Attention",
       description: "Small batch sizes ensuring individual focus on every student.",
-    },
-    {
-      icon: Clock,
-      title: "Flexible Scheduling",
-      description: "Multiple batches and timing options to suit your convenience.",
     },
     {
       icon: CheckCircle2,
